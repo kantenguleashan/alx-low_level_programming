@@ -1,8 +1,6 @@
 #include <stdio.h>
-/*The program for c*/
-
-int	main(void) /*the main function*/
-{
-	puts("\"Programming is like building a multilingual puzzle");	/*The line*/
-	return	(0);	/*The return type*/
+/*The main	function prints the line*/
+int	main(void)
+{	puts("\"Programming is like building a multilingual puzzle");/*The line */
+	return	(0);/*The return is 0*/
 }
