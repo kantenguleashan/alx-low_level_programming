@@ -1,9 +1,8 @@
 #include <stdio.h>
-/*The above line is for header*/
+/*The program for c*/
 
-
-int main(void)/*The main function*/
+int	main(void) /*the main function*/
 {
-puts("\"Programming is like building a multilingual/* puzzle");/*the lines to be printed*/
-return (0);/*the return type*/
+	puts("\"Programming is like building a multilingual puzzle");	/*The line*/
+	return	(0);	/*The return type*/
 }
