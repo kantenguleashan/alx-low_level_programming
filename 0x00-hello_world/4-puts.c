@@ -1,11 +1,9 @@
 #include <stdio.h>
- /**
-  *The progrma print a line 
-and the function is puts
- *The return is 0
- */
-int main(void)
-{puts("\"Programming is like building a multilingual 
-puzzle");
-return (0);
+/*The above line is for header*/
+
+
+int main(void)/*The main function*/
+{
+puts("\"Programming is like building a multilingual/* puzzle");/*the lines to be printed*/
+return (0);/*the return type*/
 }
