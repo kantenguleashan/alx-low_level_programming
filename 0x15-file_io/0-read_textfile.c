@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * read_textfile - Reads a text file 
+ * read_textfile-reads	a	textfile	and	print	POSIX stdout
  * @filename: A pointer to the name of the file.
  * @letters: The number of letters the
  *           function should read and print.
