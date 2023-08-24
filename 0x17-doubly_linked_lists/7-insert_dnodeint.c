@@ -1,50 +1,58 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - function that deletes the node at INDEX
- * @head: POINTER TO POINTER 
- * @index: INDEX TO BE DELETED 
+ * insert_dnodeint_at_index - function that inserts a new node at,
+ * a given position.
+ * @h: pointer to pointer to the h of linked list.
+ * @idx: index of the list where the new  node should be added.
+ * @n: value of the new node.
  *
- * Return:IF SUCCEED
+ * if it is not possible to add the new node at index idx, do not,
+ * add the new node and return NULL.
+ *
+ * Return:  the address of the new node, or NULL if it failed.
  */
 
-int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-        dlistint_t *head1;
-        dlistint_t *head2;
-        unsigned int counting;
+	dlistint_t *new_node;
+	dlistint_t *head;
+	unsigned int i;
 
-        head1 = *head;
-
-        if (head1 != NULL)
-                while (head1->prev != NULL)
-                        head1 = head1->prev;
-        counting = 0;
-
-        while (head1 != NULL)
-        {
-                if (counting == index)
-                {
-                        if (counting == 0)
-                        {
-                                *head = head1->next;
-                                if (*head != NULL)
-                                        (*head)->prev = NULL;
-                        }
-                        else
-                        {
-                                head2->next = head1->next;
-
-                                if (head1->next != NULL)
-                                        head1->next->prev = head2;
-                        }
-                        free(head1);
-                        return (1);
-                }
-                head2 = head1;
-                head1 = head1->next;
-                counting++;
-        }
-        return (-1);
+	new_node = NULL;
+	if (idx == 0)	/* insert node at beginning of list */
+		new_node = add_dnodeint(h, n);
+	else
+	{
+		head = *h;
+		i = 1;
+		if (head != NULL)
+			while (head->prev != NULL)
+				head = head->prev;
+		while (head != NULL)
+		{
+			if (i == idx)
+			{
+				/* insert note at the end of list */
+				if (head->next == NULL)
+					new_node = add_dnodeint_end(h, n);
+				else
+				{
+					new_node = malloc(sizeof(dlistint_t));
+					if (new_node != NULL)
+					{
+						new_node->n = n;
+						new_node->next = head->next;
+						new_node->prev = head;
+						head->next->prev = new_node;
+						head->next = new_node;
+					}
+				}
+				break;
+			}
+			head = head->next;
+			i++;
+		}
+	}
+	return (new_node);
 }
-
