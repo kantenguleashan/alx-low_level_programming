@@ -1,2 +1,2 @@
-Double linked lists assignments
+The assignment for doubly linked lists
 
