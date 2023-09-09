@@ -1,12 +1,12 @@
+
 #include "hash_tables.h"
 
 /**
- * hash_table_get - Retrieve the value associated with
- *                  a key in a hash table.
- * @ht: HASH TABLE POINTER
- * @key: THE EAY TO GET THE VALUE
+ * hash_table_get - RETRIEVE VALUE WITH KEY 
+ * @ht: POINTER TO HASH 
+ * @key:  THE KEY
  *
- * Return: If the key cannot be matched - NULL.
+ * Return:   - NULL. IF NOT MATCHED
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
@@ -26,4 +26,3 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	return ((node == NULL) ? NULL : node->value);
 }
-

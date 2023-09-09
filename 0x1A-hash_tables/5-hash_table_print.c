@@ -1,22 +1,24 @@
+
 #include "hash_tables.h"
 
 /**
- * hash_table_print -HASH TABLE
- * @ht: POINTER TO HASH TABLE
+ * hash_table_print - PRINTS TABLE
+ * @ht: POINTER
  *
- * Description : KEY PRINTED IN ORDER
+ * Description: Key/value pairs are printed in the order
+ *              they appear in the array of the hash table.
  */
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *node;
-	unsigned long int b;
+	unsigned long int i;
 	unsigned char comma_flag = 0;
 
 	if (ht == NULL)
 		return;
 
 	printf("{");
-	for (b = 0; b < ht->size; b++)
+	for (i = 0; i < ht->size; i++)
 	{
 		if (ht->array[i] != NULL)
 		{
